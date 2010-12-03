@@ -1,0 +1,50 @@
+4 – UFRJ Fast Food
+
+Modelar e construir um sistema para simular a operação e a gestão de vendas da rede UFRJ Fast
+Food. O sistema foi encomendado pela matriz e será distribuído para todas as lojas franqueadas.
+Regras de Negócio:
+Todas as franqueadas farão uso do sistema como forma de padronizar e organizar suas atividades
+operacionais e seu relacionamento de negócio com a franqueadora.
+O Sistema deve:
+a) Gerir as operações de atendimento ao cliente
+b) Gerir o estoque
+c) Gerir o Caixa
+d) Gerir a Conexão com a Franqueadora da Rede
+
+As características operacionais de uma Loja são:
+a) Os clientes entram em fila única para fazerem seus pedidos;
+b) Cada loja pode ter de 3 a 5 caixas de atendimento a pedidos;
+c) O caixa de atendimento ao usuário deve ter condições de se certificar da disponibilidade
+dos itens solicitados. Uma vez fechado o pedido, o cliente recebe uma identificação única
+e é eletronicamente encaminhado a um dos Caixas de pagamento;
+d) O cliente recebe uma cópia impressa do pedido;
+e) O cliente entra na fila de um dos caixas para pagamento;
+f) A loja pode ter de 1 a 3 caixas para pagamento;
+g) Uma vez que o pedido seja pago, uma ordem de execução é eletronicamente encaminhada
+à cozinha para confecção e ao almoxarifado para controle de estoque e reposição
+da matéria prima, e a informação financeira é acumulada para controle de caixa;
+h) Na cozinha existem de 3 a 5 cozinheiros que preparam os pedidos na ordem em que aparecem
+na lista para confecção;
+i) Uma vez pronto o pedido ele é colocado no balcão de entrega e sua liberação é encaminhada
+para o terminal dos entregadores;
+j) A loja pode ter de 2 a 3 entregadores de pedido que conferem visualmente a senha e, ao
+entregarem ao cliente dão baixa no pedido;
+k) Ao final do dia são feitas consolidações e emitidos relatórios gerenciais;
+l) Ao final de cada período de 30 dias é enviado ao franqueador um resumo do movimento
+físico e financeiro da Loja.
+Assumir um cardápio com alguns diferentes sanduíches e um pequeno número de refrigerantes.
+Estabeleça a matéria prima usada em cada sanduíche.
+O grupo deve demonstrar a operação de uma loja simulando a entrada aleatória de clientes e os seus
+respectivos pedidos.
+
+
+
+Fila de pedidos em cada estágio. Essa parte não é complicada. Podemos até usar a fila da STL pra facilitar.
+
+Como um pedido sai de uma fila para outra? Teremos que simular os funcionários também?
+
+Cada uma das divisões em um determinado estágio é uma thread.
+
+Controle com semáforos para os dados do estoque.
+
+Controle com semáforos para as transações financeiras.
