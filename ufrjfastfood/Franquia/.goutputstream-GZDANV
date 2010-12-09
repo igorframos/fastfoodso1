@@ -1,0 +1,58 @@
+/** O QUE FALTA PARA ESSA CLASSE ?
+    Gerar tempo de espera aleatorio de producao do sanduiche
+*/
+
+#include "cozinheiro.h"
+
+void *cozinheiro (void *ptr)
+{
+    int id = (int) ptr;
+    msg_t msg;
+	unsigned int nome_cliente;
+    char temp[256];
+
+	while (1)
+	{
+        msg.mtype = 1;
+
+        conversa[id + num_caixas_pedido + num_caixas_pagamento].clear();
+
+        //Recebe um pedido
+        sprintf (temp, "Cozinheiro (%d) livre.\n", id + 1);
+        conversa[id + num_caixas_pedido + num_caixas_pagamento].push_back(temp);
+        if (msgrcv(fila_pedidos, &msg, MAX_MSG_SIZE, 1, 0) < 0) //Recebe id do cliente, para buscar pedido no map.
+        {
+            puts("Nao ouco o que o caixa de pagamento me diz! Eu me demito!\n");
+            pthread_exit(NULL);
+        }
+        sscanf(msg.mtext, "%u", &nome_cliente); //Copia id do cliente recebido. 
+
+        //Cozinheiro usa o map pedido, com o id do cliente
+        //Calcula todos os ingrediente a partir de pedido[nome_cliente], e retira dos ingredientes separados.
+        separados.wait();
+            separados.retira_ingredientes(pedido[nome_cliente]);
+        separados.post();
+
+        sprintf(temp, "Cozinheiro (%d) conferiu e retirou os ingredientes separados, relacionado ao pedido de %u.\n", id
+        + 1, nome_cliente);
+        conversa[id + num_caixas_pedido + num_caixas_pagamento].push_back(temp);
+
+        //Gerar tempo aleatorio de producao do sanduiche
+
+        //Cozinheiro passou o sanduiche ao entregador
+        if (msgsnd(fila_produtos, &msg, MAX_MSG_SIZE, 0) < 0)
+        {
+            puts("Esses entregadores não recebem meu produto! Eu me demito!\n");
+            pthread_exit(NULL);
+        }
+    
+        //Imprime toda conversa do cliente com o caixa
+		for (int i = 0; i < (int) conversa[id + num_caixas_pedido + num_caixas_pagamento].size(); i++)
+		{
+			printf ("%s", conversa[id + num_caixas_pedido + num_caixas_pagamento][i].c_str());
+		}
+		printf ("\n");
+    }
+
+	return NULL;
+}
