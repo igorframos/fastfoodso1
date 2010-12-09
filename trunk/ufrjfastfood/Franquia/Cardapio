@@ -1,0 +1,22 @@
+Cardápio:
+
+Basicão = Pão, Presunto, Queijo, Alface, Tomate		Preço = 5,00
+Peruba = Pão, Peru, Presunto, Bacon			Preço = 6,50
+Frango = Pão, Frango, Alface, Tomate			Preço = 6,00
+Italiano = Pão, Salame, Peperoni, Presunto		Preço = 6,00
+Ariel = Pão, Atum, Azeitona (idéia do Igor)		Preço = 6,50
+Americano = Pão, Almondegas				Preço = 5,00
+Natural = Pão Árabe, Alface, Tomate, Peito de Peru, Queijo	Preço = 5,00
+Cachorro Quente = Pão de Cachorro-Quente, Salsicha, Tomate, Pimentão, Milho, Batata Palha	Preço = 5,00
+Cheeseburguer = Pão de Hamburguer, Carne, Queijo, Batata Palha		Preço = 6,00
+Cheesebacon = Pão de Hamburguer, Carne, Bacon, Queijo			Preço = 6,50
+Cheesetudo = Pão de Hamburguer, Carne, Queijo, Bacon, Ovo		Preço = 7,00
+Hamburguer = Pão de Hamburguer, Carne					Preço = 5,00
+Canadense = Pão, Lombo Canadense, Alface, Tomate			Preço = 5,00
+
+Coca-Cola		Preço = 2,50
+Guaraná Antártica	Preço = 2,50
+Soda			Preço = 2,50
+Suco de Laranja		Preço = 2,00
+Suco de Uva		Preço = 2,00
+Ice Tea Limao		Preço = 3,00
