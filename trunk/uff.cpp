@@ -1,4 +1,5 @@
 /*
+bleu
 	O que pretendo fazer?
 	
 	Um cliente é uma thread. Uma fila de clientes é implementada com semáforos.
